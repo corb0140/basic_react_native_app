@@ -1,16 +1,23 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
+
+import HomeScreen from "./Screens/HomeScreen";
+import Gallery from "./Screens/Gallery";
+import Games from "./Screens/Games";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Second" component={SecondPage} />
-        <Stack.Screen name="Third" component={ThirdPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Gallery" component={Gallery} />
+          <Stack.Screen name="Games" component={Games} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
