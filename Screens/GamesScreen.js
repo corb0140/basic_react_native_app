@@ -8,6 +8,11 @@ const DATA = [
   { id: "3", title: "Mario Kart" },
   { id: "4", title: "Remnant" },
   { id: "5", title: "SSX Tricky" },
+  { id: "6", title: "Halo" },
+  { id: "7", title: "Call of Duty" },
+  { id: "8", title: "Fortnite" },
+  { id: "9", title: "Apex Legends" },
+  { id: "10", title: "GTA V" },
 ];
 
 const Item = ({ item, onPress, toggleStyle }) => (
