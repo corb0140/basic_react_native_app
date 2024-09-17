@@ -35,6 +35,7 @@ export default function Games() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.heading}>Games</Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -49,6 +50,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: "30%",
+    alignItems: "center",
+  },
+  heading: {
+    fontSize: 30,
+    fontWeight: "bold",
+    paddingBottom: 20,
+    textDecorationLine: "underline",
   },
   text: {
     fontSize: 20,
