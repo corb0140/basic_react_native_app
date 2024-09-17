@@ -3,7 +3,7 @@ import { Image, StyleSheet, ScrollView } from "react-native";
 
 import { cars } from "../cars";
 
-export default function Gallery() {
+export default function GalleryScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>

@@ -10,25 +10,25 @@ const DATA = [
   { id: "5", title: "SSX Tricky" },
 ];
 
-const Item = ({ item, onPress, animate }) => (
+const Item = ({ item, onPress, toggleStyle }) => (
   <View style={styles.view}>
-    <Pressable style={[styles.item, animate]} onPress={onPress}>
+    <Pressable style={[styles.item, toggleStyle]} onPress={onPress}>
       <Text style={styles.text}>{item.title}</Text>
     </Pressable>
   </View>
 );
 
-export default function Games() {
+export default function GamesScreen() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const animate = item.id === selectedId ? styles.animate : null;
+    const toggleStyle = item.id === selectedId ? styles.toggleStyle : null;
 
     return (
       <Item
         item={item}
         onPress={() => setSelectedId(item.id)}
-        animate={animate}
+        toggleStyle={toggleStyle}
       />
     );
   };
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  animate: {
+  toggleStyle: {
     transform: [{ scale: 1.15 }],
     backgroundColor: "purple",
   },

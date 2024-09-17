@@ -14,6 +14,7 @@ export default function HomeScreen({ navigation, route }) {
         style={styles.buttonContainer}
         title="Go to Games Page"
         onPress={() => navigation.navigate("Games")}
+        color={"#f19"}
       />
     </SafeAreaView>
   );

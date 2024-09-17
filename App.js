@@ -5,8 +5,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 const Stack = createNativeStackNavigator();
 
 import HomeScreen from "./Screens/HomeScreen";
-import Gallery from "./Screens/Gallery";
-import Games from "./Screens/Games";
+import GalleryScreen from "./Screens/GalleryScreen";
+import GamesScreen from "./Screens/GamesScreen";
 
 export default function App() {
   return (
@@ -14,8 +14,8 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Gallery" component={Gallery} />
-          <Stack.Screen name="Games" component={Games} />
+          <Stack.Screen name="Gallery" component={GalleryScreen} />
+          <Stack.Screen name="Games" component={GamesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
