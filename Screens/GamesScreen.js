@@ -15,10 +15,10 @@ const DATA = [
   { id: "10", title: "GTA V" },
 ];
 
-const Item = ({ item, onPress, toggleStyle }) => (
+const Item = ({ item, onPress, toggleStyle, textColor }) => (
   <View style={styles.view}>
     <Pressable style={[styles.item, toggleStyle]} onPress={onPress}>
-      <Text style={styles.text}>{item.title}</Text>
+      <Text style={[styles.text, textColor]}>{item.title}</Text>
     </Pressable>
   </View>
 );
@@ -28,12 +28,14 @@ export default function GamesScreen() {
 
   const renderItem = ({ item }) => {
     const toggleStyle = item.id === selectedId ? styles.toggleStyle : null;
+    const textColor = item.id === selectedId ? { color: "white" } : null;
 
     return (
       <Item
         item={item}
         onPress={() => setSelectedId(item.id)}
         toggleStyle={toggleStyle}
+        textColor={textColor}
       />
     );
   };
@@ -66,7 +68,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "black",
   },
   item: {
     padding: 10,
