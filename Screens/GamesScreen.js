@@ -16,14 +16,14 @@ const DATA = [
 ];
 
 const Item = ({ item, onPress, toggleStyle, textColor }) => (
-  <View style={styles.view}>
+  <View style={styles.itemView}>
     <Pressable style={[styles.item, toggleStyle]} onPress={onPress}>
       <Text style={[styles.text, textColor]}>{item.title}</Text>
     </Pressable>
   </View>
 );
 
-export default function GamesScreen() {
+export default function GamesScreen({ navigation }) {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
@@ -42,6 +42,21 @@ export default function GamesScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.buttonView}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Text>Go to Home Page</Text>
+        </Pressable>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Gallery")}
+        >
+          <Text>Go to Gallery Page</Text>
+        </Pressable>
+      </View>
+
       <Text style={styles.heading}>Games</Text>
       <FlatList
         data={DATA}
@@ -81,12 +96,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  view: {
+  itemView: {
     flex: 1,
     alignItems: "center",
+  },
+  buttonView: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
+    paddingBottom: 50,
   },
   toggleStyle: {
     transform: [{ scale: 1.15 }],
     backgroundColor: "purple",
+  },
+  button: {
+    padding: 15,
+    backgroundColor: "lightblue",
   },
 });

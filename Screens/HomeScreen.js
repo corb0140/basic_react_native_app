@@ -1,10 +1,10 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, Button, StyleSheet } from "react-native";
 
-export default function HomeScreen({ navigation, route }) {
+export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.textStyle}>This Is React Native Exercise 1</Text>
+      <Text style={styles.textStyle}>Basic React Native App</Text>
       <Button
         style={styles.buttonContainer}
         title="Go to Gallery Page"
