@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    height: "100%",
   },
   textStyle: {
     fontSize: 20,
@@ -34,6 +33,7 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
   },
   buttonView: {
+    maxHeight: 50,
     flex: 1,
     gap: 10,
   },
